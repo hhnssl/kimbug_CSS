@@ -6,6 +6,8 @@
 body {
     font-family: "Noto Sans KR", sans-serif;
     letter-spacing: -0.02em;
+
+    background-color: black;
 }
 
 h1 {
@@ -55,3 +57,127 @@ button {
 }
 
 /* ▼ WHERE YOUR CODE BEGINS */
+
+.card {
+    width: 400px;
+}
+
+.card-carousel {
+    position: relative;
+}
+
+.card-carousel img {
+    /*img는 부모가 사이즈가 뭐가 됐든 그냥 자기 사이즈 유지하고 있음
+    그래서 width:100%를 줘서 부모사이즈를 그대로 부여해주는 것*/
+    width: 100%;
+    height: auto;
+
+    /*img는 inline이지만 width와 height값을 줄 수 있음. 그래도 약간의 오차가 발생할 수 있으니
+    명시적으로 block 처리*/
+    display: block;
+}
+
+#prev,
+#next {
+    position: absolute;
+
+    /*기준인 부모. 즉 card-carousel의 top에서 절반인 위치!*/
+    top: 50%;
+
+    /*top: 50%; 만으로는 버튼이 완벽하게 시각적으로 가운데에 위치하지 않음
+        왜냐? 절반인 부분에서부터 적재가 시작되기 때문에 
+        수치상으로는 절반일지라도 시각적으로는 가운데에 위치하지 않아버림
+
+        해결 방법==> transform: translateY(-50%);
+        자기의 위치를 기준으로, Y축에서 50%만큼 아래로 내려감
+        top의 기준이 부모라면, transform의 기준은 자기 자신임
+    */
+    transform: translateY(-50%);
+}
+
+#prev {
+    left: 0;
+}
+
+#next {
+    right: 0;
+}
+
+.card-content {
+    padding: 12px 16px;
+
+    background-color: #fff;
+}
+
+.card-content h1 {
+    margin-bottom: 2px;
+}
+
+.card-content strong {
+    /*김버그트래블이랑 가로로 붙어있어서 밑으로 떨어뜨리기*/
+    display: block;
+
+    /*보통 margin-bottom|top을 쓸 때 둘중 하나만 통일하지만,
+    위 요소인 span이 inline이라서 margin-bottom을 쓸 수 없으니 여기에선 margin-top을 씀 */
+    margin-top: 8px;
+
+    /*텍스트 우측 정렬*/
+    text-align: right;
+}
+
+/*내 코드 시작
+
+.clearfix::after{
+    content: "";
+    clear: both;
+    display: block;
+}
+
+
+.card-carousel {
+    position: relative;
+}
+
+.card-carousel img {
+    width: 400px;
+    height: 240px;
+}
+
+.card-carousel #prev { 
+    position: absolute;
+    top: 106px;
+    left: 0;
+}
+
+.card-carousel #next { <-- img에만 width 값을 주면 안되고 cardcarousel에도 width를 넣어야 버튼이 올바르게 기준을 찾지~
+    position: absolute;
+    top: 106px;
+    right: 0;
+}
+
+.card-content {
+    position: relative;
+    width: 400px;
+    height: 114px;
+    background-color: white;
+}
+
+.card-content h1 {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+}
+
+.card-content span {
+    position: absolute;
+    top: 46px;
+    left: 16px;
+}
+
+.card-content strong {
+    position: absolute;
+    right: 16px;
+    bottom: 12px;
+}
+
+내 코드 끝*/
