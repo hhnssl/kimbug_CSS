@@ -5,6 +5,7 @@
 
 body {
     font-family: "Lato", sans-serif;
+    background-color: black;
 }
 
 h1 {
@@ -16,12 +17,122 @@ h1 {
 
 /* ▼ WHERE YOUR CODE BEGINS */
 
-.user-photo img{
+/* 강사님 코드 시작*/
+
+.user-card {
+    width: 240px;
+    padding: 8px 12px;
+    border: 1px solid #e5eaef;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.user-card::after {
+    clear: left;
+    content: ""; /*가상요소(::after)에 필수*/
+    display: block; /*clear에 필수, float 요소에 영향을 안받기 위해 */
+}
+
+.user-photo,
+.user-name {
+    float: left;
+}
+
+.user-photo {
+    margin-right: 12px;
+    position: relative;
+}
+
+.user-photo img {
+    /*원래 inline은 width와 height 안 먹는데 img만은 예외임!
+    BUT, 확실히 명시하기 위해 block을 추가 해줌~ */
+    display: block;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
 }
 
-/*내 코드 시작
-내 코드 끝*/
+.user-status {
+    /*디자인 시안에 따르면 border:2px, 그 안의 동그라미 8px이므로
+    동그라미의 크기를 12px * 12px로 해야함!
+    왜냐? 위에서 box-sizing을 border-box로 했으니까~ 
+    border-box는 12px 안에서 스트로크 크기를 할당하기 때문
+    
+    이게 불편하면,
+    box-sizing: content-box; 얘를 추가하고
+    width: 8px;
+    height: 8px;
+    이렇게 하면 됩니다뤼~
+    */
+    width: 12px;
+    height: 12px;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: #21d891;
 
-/* 강사님 코드 시작
-강사님 코드 끝 */
+    /*여기까지 작성했는데도 동그라미가 보이지 않음
+    -> 아, span이 inline이라 width와 height가 안먹는구나!, 하고 깨달아야함*/
+    display: block; /*아래 position: absolute때문에 block이 돼서 지워도 됨!*/
+    position: absolute; /*자신의 조상(position: static이 아닌)이 기준점*/
+    right: -2px;
+    bottom: -2px;
+}
+
+.user-name {
+    padding: 8px 0; /*padding과 margin 정말 헷갈린다..*/
+}
+/*강사님 코드 끝 */
+
+/*내 코드 시작
+-- 유저사진에 active 겹치게 하는 거 실패 ㅠ
+.user-card {
+    background-color: white;
+    border-radius: 4px;
+
+    margin: 5px;
+}
+
+.user-card::after {
+    content: "";
+    clear: left;
+    display: block;
+}
+
+.user-photo,
+.user-name {
+    float: left;
+}
+
+.user-photo {
+    position: relative;
+
+    z-index: 1;
+}
+
+.user-photo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    margin: 8px 12px;
+}
+
+.user-status {
+    width: 8px;
+    height: 8px;
+    background-color: #21d891;
+    border-radius: 50%;
+    border: 2px solid white;
+
+    z-index: 2;
+    position: absolute; <- 안보였던 동그라미가 absolute를 씀으로써 inline-> block으로 상승해서 보이게 됨
+    top: 48px;
+    left: 52px;
+}
+
+.user-name {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+내 코드 끝*/
