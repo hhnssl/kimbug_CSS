@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    background-color: black;
+    font-family: "Noto Sans KR", sans-serif;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #1f2d3d;
+    line-height: 1.25;
+}
+
+strong {
+    font-size: 14px;
+    font-weight: 400;
+    color: #afb3b9;
+    line-height: 1.4285714286;
+}
+
+p {
+    font-size: 16px;
+    color: #79818b;
+    line-height: 1.5;
+}
+
+/* ▼ WHERE YOUR CODE BEGINS */
+
+/* 내가 작성한 코드*/
+/* .card {
+    width: 531px;
+
+    overflow: hidden;
+}
+
+.card img { <-- 클래스명이 있으니 클래스를 응용해야지!!
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+
+    float: left;
+    margin: 20px;
+}
+
+.card.card-content {
+    float: left;
+
+    padding-top: 20px;
+}
+
+.card.card-content h1 {
+    display: inline;
+    margin-top: 20px; 
+} */
+
+/*
+    강사님 코드 시작~
+*/
+
+/*미리 작성해놓고 필요한 부분에 클래스명인 clearfix를 넣어주며 사용!*/
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+/*clear를 주는 기준은? : float된 요소들의 부모에게!*/
+
+.card {
+    background-color: white;
+    padding: 20px;
+    max-width: 540px;
+}
+
+.card-user {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+/*왜 .card.card-content로 하면 안먹히는 거지??! .클래스.클래스는 언제쓰이는 걸까 */
+.card-content h1 {
+    margin-bottom: 4px;
+}
+
+.card-content strong {
+    display: block;
+    margin-bottom: 12px;
+}
+
+.card-user,
+.card-content {
+    float: left;
+    /*float을 사용하면 요소들이 inline에서(or something) block으로 바뀜*/
+}

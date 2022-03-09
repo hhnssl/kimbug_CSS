@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #273444;
+}
+
+/* ▼ WHERE YOUR CODE BEGINS */
+
+.user-photo img{
+    border-radius: 50%;
+}
+
+/*내 코드 시작
+내 코드 끝*/
+
+/* 강사님 코드 시작
+강사님 코드 끝 */
