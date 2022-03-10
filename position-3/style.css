@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: "Nunito Sans", sans-serif;
+    color: #273444;
+    background-color: #000;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+    box-shadow: none;
+    outline: none;
+}
+
+.modal {
+    background-color: #fff;
+}
+
+.modal-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.6666666667;
+}
+
+.modal-desc {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.input-group input,
+.input-group button {
+    font-size: 14px;
+    font-family: "Nunito Sans", sans-serif;
+    line-height: 1.4285714286;
+}
+
+.close-button {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: transparent;
+    background-image: url(./assets/icon-close.svg);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* ▼ WHERE YOUR CODE BEGINS */
+
+.modal {
+    padding: 32px 40px; /*안의 모든 컨텐트들의 여백 여기서 한번에 해결~!*/
+    border-radius: 4px;
+
+    position: fixed; /*부모가 viewport*/
+    top: 50%;
+    left: 50%;
+
+    transform: translate(
+        -50%,
+        -50%
+    ); /*자신의 위치에서 x축/y축으로 50%만큼 back*/
+}
+
+.modal-title,
+.modal-desc {
+    text-align: center;
+    /*text-align: block안에 들어있는 inline, inline-block이나 텍스트 정렬할 때 사용
+    (inline-block도 inline 성격을 가지고 있어서 text-align 이 사용 가능함!)*/
+}
+
+.modal-title {
+    margin-bottom: 4px;
+}
+
+.modal-desc {
+    width: 592px;
+    /*margin: 0 auto; /* 좌우 마진을 동일하게*/
+    margin: 0 auto 24px; /*상:0/좌:자동/하:24/우:자동*/
+}
+
+.input-group {
+    text-align: center;
+}
+
+.input-group input {
+    width: 200px;
+    height: 36px;
+
+    background-color: #f6f8fa;
+    border: none; /*못생긴 선 없애기*/
+    border-radius: 4px;
+    padding: 0 16px;
+
+    margin-right: 8px;
+}
+
+.input-group button {
+    height: 36px;
+    border: none;
+    border-radius: 4px;
+    background-color: #2860e1;
+    color: #fff;
+    padding: 0 14px; /*8px 14px 이 아닌 이유는.. 상하의 패딩은 필요가 없어서 인가?*/
+}
+
+.close-button{
+    position: absolute; /*이미 기준점이 될 modal이 static이 아니므로 따로 부모의 position을 건드릴 필요가 없따*/
+    top: 8px;
+    right: 8px;
+}
+
+/* 
+
+.modal {
+    position: relative;
+}
+
+.modal::after {
+    content: "";
+    clear: both;
+    position: block;
+}
+
+.modal-title {
+    text-align: center;
+}
+
+.modal-desc {
+    text-align: center;
+}
+
+.input-group { <-- 얘네가 modal 안으로 안들어와서 실패 ㅠㅠㅠ
+    position: absolute;
+    top: 148px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.close-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+} */
