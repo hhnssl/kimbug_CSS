@@ -19,16 +19,16 @@ a {
     padding-left: 0;
     border-bottom: 1px solid #e5eaef;
     list-style-type: none;
-}
 
-.tab-menu::after {
-    content: "";
-    display: block;
-    clear: both;
+    display: flex;
+    /* flex 쓸 때 얘네 까먹지마*/
+    /* flex-direction: row; <-- 기본값이라 없어도 되긴하지만 */
+    /* flex-wrap: nowrap; <-- 얘도 기본값 //nowrap: 무조건 한 줄에 때려박아! */
+    /* justify-content: flex-start; <-- 기본값*/
+    align-items: center;
 }
 
 .tab-menu-item {
-    float: left;
     margin-right: 16px;
 }
 
