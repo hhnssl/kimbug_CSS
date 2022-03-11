@@ -1,0 +1,104 @@
+/*타이포그래피 라이브러리 만들기*/
+
+/* ▼ WHERE YOUR CODE BEGINS */
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    letter-spacing: -0.015em; /*<-- 겹치는 거니까 여기서만 선언해서 한꺼번에!*/
+}
+
+/*나만의 Font Library 만들기!*/
+/* Font size (fs) */
+
+.fs-tiny {
+    font-size: 12px;
+    line-height: 1.3333; /*글자높이가 16px이니까 16 / 12해서 나온 값. em 꼭 생략하기*/
+    /*letter-spacing: -0.015em; 자간이 -1.5%니까 -0.015*/
+}
+
+.fs-small {
+    font-size: 14px;
+    line-height: 1.4285;
+    /* letter-spacing: -0.015em; */
+}
+
+.fs-base {
+    font-size: 16px;
+    line-height: 1.5;
+    /* letter-spacing: -0.015em; */
+}
+
+.fs-medium {
+    font-size: 18px;
+    line-height: 1.5555;
+    /* letter-spacing: -0.015em; */
+}
+
+.fs-large {
+    font-size: 20px;
+    line-height: 1.5;
+    /* letter-spacing: -0.015em; */
+}
+
+.fs-h2 {
+    font-size: 28px;
+    line-height: 1.4285;
+    /* letter-spacing: -0.015em; */
+}
+
+.fs-h1 {
+    font-size: 34px;
+    line-height: 1.4117;
+    /* letter-spacing: -0.015em; */
+}
+
+/*Font-weight*/
+.fw-light {
+    font-weight: 300;
+}
+
+.fw-regular {
+    font-weight: 400;
+}
+
+.fw-medium {
+    font-weight: 500;
+}
+
+.fw-bold {
+    font-weight: 700;
+}
+
+/* colors */
+
+.text-dark {
+    color: #1f2d3d;
+}
+
+.text-primary {
+    color: #3c4858;
+}
+
+.text-secondary {
+    color: #8492a6;
+}
+
+.text-tertiary {
+    color: #c0ccda;
+}
+
+.text-white {
+    color: #ffffff;
+}
+
+.text-success {
+    color: #13ce66;
+}
+
+.text-error {
+    color: #ff5216;
+}
+
+.text-info {
+    color: #009eeb;
+}
