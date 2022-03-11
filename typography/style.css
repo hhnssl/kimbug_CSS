@@ -1,4 +1,88 @@
 /* ▼ WHERE YOUR CODE BEGINS */
-h1{
-    
+
+/* 추천 기본 설정!!!!!! */
+* {
+    box-sizing: border-box;
+    margin: 0; /*기본으로 부여되는 margin이 있으니 이걸 없애고 시작하겠다!*/
 }
+
+body {
+    background-color: #000;
+}
+
+.container {
+    /*반응형 웹 만들기!
+    가로 넓이는 항상 100%로 두되,
+    736px이 넘어가면 더 이상 늘어나지 말아라!*/
+    width: 100%;
+    max-width: 736px;
+
+    /*좌우 마진을 항상 자동으로 동일하게
+    == 항상 수평 가운데맞춤!
+    이거 하기 전에는 오른쪽으로 화면 늘어나도 컨테이너는 왼쪽에만 딱 붙어있었음*/
+    margin: 0 auto;
+
+    padding: 48px;
+
+    background-color: #fff;
+}
+
+h1 {
+    margin-bottom: 48px;
+}
+
+h2 {
+    margin-bottom: 24px;
+}
+
+h3 {
+    margin-bottom: 8px;
+}
+
+p {
+    margin-bottom: 32px;
+}
+
+/*
+    내 코드.. 잘 한 거 같은데?? 근데 height가 달라.. 흠.. p 줄바꿈도 다르고..
+     ㄴ ㅇㅇㅇㅇ 어쩔수없음 당연한 거임!! 디자인 시안은 시안일뿐~
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+}
+
+.container {
+    width: 736px;
+    display: flex;
+    flex-direction: column;
+
+    
+    padding: 48px 48px 358px 48px;
+    background-color: #fff;
+}
+
+.container h1 {
+    margin-top: 0;
+    margin-bottom: 48px;
+}
+
+.container h2 {
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+.container h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.container p {
+    margin-top: 0;
+    margin-bottom: 32px;
+
+    width: 640px;
+} */
