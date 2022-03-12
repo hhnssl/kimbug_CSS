@@ -1,0 +1,40 @@
+/*내가 직접 만든거!*/
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+/* font size*/
+.fs-fourteen {
+    font-size: 14px;
+}
+
+.fs-sixteen {
+    font-size: 16px;
+}
+
+.fs-twenty {
+    font-size: 20px;
+}
+
+/* font weight */
+.fw-regular {
+    font-weight: 400;
+}
+
+.fw-medium {
+    font-weight: 500;
+}
+
+/* font color */
+.fc-white {
+    color: #fff;
+}
+
+.fc-light-grey {
+    color: #7d858f;
+}
+
+.fc-black{
+    color: #151B26;
+}

@@ -1,0 +1,76 @@
+/*
+매우 잘한 거 가튼데 ㅎㅎㅎㅎㅎ
+
+.like-button {
+    width: 36px;
+    height: 36px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-image: url(./asstes/icon-favorite.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #fff;
+    border-radius: 50%;
+    border: none;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    
+}
+
+body {
+    background-color: #000;
+}
+
+.card {
+    width: 840px;
+
+    background-color: #fff;
+
+    display: flex;
+
+    padding: 24px;
+
+}
+
+.card-image {
+    width: 300px;
+    height: 200px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(./asstes/img-house.jpg);
+    background-size: cover;
+    border-radius: 6px;
+
+    margin-right: 24px;
+}
+
+.card-header{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    margin-bottom: 9px;
+}
+
+.property-type{
+    display: flex;
+}
+
+.plus-badge {
+    display: block;
+    width: 48px;
+    height: 22px;
+    background-color: #92174d;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+
+    margin-right: 8px;
+}
+
+.card-title {
+    margin-bottom: 16px;
+} */
