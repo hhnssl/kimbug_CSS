@@ -1,5 +1,194 @@
+.like-button {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+* {
+    /* 오차 없이 하려면 필수!*/
+    box-sizing: border-box;
+    margin: 0;
+    /* 오차 없이 하려면 필수!*/
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+/* 스크린리더(tts같은)를 사용하는 이용자를 위해 써놓은 정보를
+디스플레이 상에서는 없앨 때 사용*/
+.sr-only {
+    /* 
+    display: none;
+    display 는 상자(Box)를 취급하는 속성.
+    none: 이 상자 요소를 없는 취급 해라!
+    
+    근데 display:none을 사용하면 아~~~예 요소 자체를 없애버려서 스크린리더의 역할을 하지 못함
+    그래서 position:absolute 로 아예 요소를 붕 띄워서 없는 것처럼 보이게 함*/
+    position: absolute;
+    /*확인사살용*/
+    z-index: -100;
+    width: 1px; /*가로 세로 하나라도 0px 주면 display:none처럼 스크린리더가 안 읽어줌*/
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+    /*확인사살용*/
+}
+
+.card {
+    display: flex;
+    width: 840px;
+    padding: 24px;
+
+    background-color: yellow;
+}
+
+.card-image {
+    position: relative; /*버튼 땜에 기준점 만들어 주는거*/
+
+    width: 300px;
+    height: 200px;
+    border-radius: 6px;
+    background-image: url("./asstes/img-house.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+
+    margin-right: 24px;
+}
+
+.card-image .like-button {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background-color: #fff;
+    background-image: url("./asstes/icon-favorite.svg");
+    background-size: 24px 24px;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    /*커서 누르는 모양 내기*/
+    cursor: pointer;
+
+    /*부모를 기준으로 위치 정하기*/
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+
+/*현재 card-content의 width 길이 = 제일 긴 자식 요소의 길이(Unwind in a Bright Space with Rustic Accents 이 부분)
+    아래의 설정으로 width 넓혀줌*/
+.card-content {
+    flex-grow: 1;
+    /*0이면 크기를 키우지 않겠다. 1은 남는 영역이 있으면 크기를 키우겠다*/
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 8px;
+}
+
+.plus-badge {
+    /* inline-block은 
+        inline처럼 가로로 흐르고
+        block처럼 width & height 값을 부여할 수 있다 
+        단, inline-block을 사용하면 margin 부여안했는데도 살짝 여백 생김*/
+    display: inline-block;
+
+    /* 글자 PLUS에게 패딩을 주기*/
+    padding: 1px 8px;
+
+    /* PLUS와  Entire apartment 간격 띄우기*/
+    margin-right: 6px;
+
+    /*소문자 -> 대문자 변환*/
+    text-transform: uppercase;
+
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.428571428571429; /* 20 / 14 */
+    color: #fff;
+    background-color: #92174d;
+}
+
+.property-type span {
+    font-size: 16px;
+    line-height: 1.25;
+    color: #7d858f;
+}
+
+.property-rate {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.property-rate::before {
+    content: ""; /* 가상요소 만들 때 필수!!!!!*/
+    display: inline-block; /* 사이즈를 부여하기 위해! */
+    width: 16px;
+    height: 16px;
+
+    background-image: url("./asstes/icon-star.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+
+    /*다른 요소에 영향을 안주고
+    자기 자리에서 움직임!*/
+    position: relative;
+    top: 2px; /*자기 자리 기준으로 위에서 2px 떨어지기*/
+}
+
+.property-rate strong {
+    color: #151b26;
+}
+
+.property-rate span {
+    color: #7d858f;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #151b26;
+}
+
+.property-detail {
+    font-size: 14px;
+    line-height: 1.14285714;
+    color: #7d858f;
+}
+
+/*글자 사이에 · <- 삽입하기*/
+.property-detail dd span::after {
+    /* 각 span 이 끝나기 전에 가상요소를 부여한다*/
+    content: "·";
+    /* · 양 옆에 공백 넣기( 가상 요소는 inline이라 위아래 마진은 못 주지만 좌우 마진은 줄 수 있다~)*/
+    margin: 0 6px;
+}
+
+/*1 bath와 kitchen 오른쪽에는 · 을 넣지 않도록*/
+.property-detail dd span:last-child::after {
+    /*ㄴ ==> property-detail안에 있는 dd 안에 있는 span의
+    마지막 친구(last-child)의 끝에 */
+    content: "";
+}
+
+/*.property-detail div:first-child: 63번째 줄을 뜻함*/
+.property-detail div:first-child {
+    margin-bottom: 8px;
+}
+
 /*
-매우 잘한 거 가튼데 ㅎㅎㅎㅎㅎ
+내 코드
+매우 잘한듯 ㅎ
+글씨 없애는 거 빼고
 
 .like-button {
     width: 36px;

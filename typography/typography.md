@@ -1,3 +1,8 @@
+line-height를 font-size 크기에 대한 em으로 나타내는 법
+디자인 시안에서 폰트가 14px이고 행간격이 20px이면
+14가 기준이 되므로 14 \* X = 20
+따라서 line-height: X;를 해주면 되는 것
+
 -   Typography: 텍스트를 예쁘게 디자인 하는 것
     [1] Essentials
 
