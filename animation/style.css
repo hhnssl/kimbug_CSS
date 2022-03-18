@@ -1,0 +1,155 @@
+/* ▼ WHERE YOUR CODE BEGINS */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: "Mulish", sans-serif;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 216px;
+}
+
+.loading-title {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.333333;
+    font-weight: 400;
+    color: #151b26;
+    text-align: center;
+
+    animation-name: flicker;
+    animation-duration: 1600ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; /*왕복효과로 더 자연스럽게*/
+}
+
+.progress-bar {
+    position: relative;
+    width: 300px;
+    height: 12px;
+    border-radius: 100px;
+    background-color: #e5eaef;
+
+    /* 게이지바가 회색영역을 넘어가면 가려버려! */
+    overflow: hidden;
+}
+
+.progress-bar-gauge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 12px;
+    border-radius: 100px;
+    background-color: #13ce66;
+
+    animation-name: loading-bar;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+}
+
+@keyframes flicker {
+    /* 처음에는 불투명도가 1(불투명)이고, 애니메이션이 끝날 때쯤 불투명도가 0(투명)이었으면 좋겠어 */
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes loading-bar {
+    0% {
+        width: 0;
+        opacity: 1;
+    }
+
+    90% {
+        width: 100%;
+        opacity: 1;
+    }
+
+    100% {
+        width: 100%;
+        opacity: 0;
+    }
+    /* 애니메이션의 90퍼센트까지는 게이지바를 끝까지 채우고 
+    게이지바가 100퍼센트가 됐을 때 투명하게 사라지는 효과st*/
+}
+
+/* 
+성공한 거 같아!!!!
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #000;
+}
+
+.loading {
+    width: 500px;
+    height: 216px;
+    background-color: #fff;
+    margin-left: 10px;
+    padding: 80px 100px;
+}
+
+.loading .loading-title {
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 20px;
+
+    animation: 2000ms ease-in-out infinite alternate blinking;
+}
+
+.loading .progress-bar {
+    width: 300px;
+    height: 12px;
+
+    border-radius: 100px;
+    background-color: #e5eaef;
+}
+
+.loading .progress-bar .progress-bar-gauge {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    border-radius: 100px;
+    background-color: #13ce66;
+    animation: 2000ms ease-in infinite to_green;
+}
+
+@keyframes blinking {
+    from {
+        color: #000;
+    }
+    to {
+        color: #fff;
+    }
+}
+
+@keyframes to_green {
+    from {
+        width: 0%;
+        background-color: #e5eaef;
+    }
+    to {
+        width: 100%;
+        background-color: #13ce66;
+    }
+} */
