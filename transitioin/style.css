@@ -1,0 +1,60 @@
+/* ▼ WHERE YOUR CODE BEGINS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+button,
+input,
+textarea {
+    /* button or input or textarea와 같이 form 과 관련된 요소들은 body에 폰트패밀리를 적용해도 먹지 않음*/
+    font-family: "Lato", sans-serif;
+}
+
+button {
+    /*button 기본 속성 없애기*/
+    background-color: #fff;
+    border: none;
+}
+
+.line-button {
+    font-size: 16px;
+    line-height: 1.25;
+    color: #151b26;
+
+    padding: 18px 30px;
+
+    position: relative;
+
+    cursor: pointer;
+}
+
+.line-button::after {
+    content: "";
+    position: absolute;
+    /* ::before과 ::after과 같이 가상요소는 기본 디스플레이값이 inline이다
+        하지만, absolute를 사용하면 모든 요소들이 block으로 신분 상승함*/
+    width: 0;
+    height: 2px;
+    background-color: #0066FF;
+
+    bottom: 0;
+    left: 0;
+
+    /* width에게 transition을 주겠다! */
+    transition: width 250ms ease-in, background-color 250ms ease-in;
+}
+
+
+/* line-button이 선택됐을 때(hover) 가상요소는 */
+.line-button:hover::after{
+    width: 100%;
+    /* 마우스를 올린 순간 가상요소의 크기를 부모인 .line-button만큼 키운다 */
+
+    background-color: hotpink;
+    /* .line-button::after에서 [background-color 250ms ease-in] 추가해야 자연스러워짐*/
+}
