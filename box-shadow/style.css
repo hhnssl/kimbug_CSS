@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 56px;
+    padding: 0 36px;
+    border: none;
+    border-radius: 50px;
+    margin: 0 8px;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:focus,
+button:active {
+    outline: none;
+}
+
+.cancel-button {
+    background-color: #ff4949;
+
+    transition: box-shadow 250ms ease-in;
+}
+
+.cancel-button:hover {
+    /*x축으로의이동, y축으로의이동, 흐린정도, 그림자사이즈, 색상 */
+    box-shadow: 0 10px 16px 0 rgba(255, 73, 73, 0.35);
+}
+
+.confirm-button {
+    background-color: #13ce66;
+    /*x축으로의이동, y축으로의이동, 흐린정도, 그림자사이즈, 색상 */
+    box-shadow: 0 10px 16px 0 rgba(19, 206, 102, 0.35);
+}
