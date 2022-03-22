@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+}
+
+/* Reset CSS: 요소들의 기본속성을 없애서 바로바로 스타일을 입힐 수 있도록 도화지 상태로 만드는 작업 (개발자의 취향대로)*/
+a{
+    text-decoration: none;
+    color: inherit;
+    /* color: inherit <== a의 색상은 부모 요소의 색을 상속 받아라~ */
+}
+
+button,
+input,
+textarea{
+    /* form 과 관련된 요소들은 body에 설정한 속성을 제대로 먹지 않음
+    그래서 명시적으로 이렇게 선언해주는 것*/
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+}
+
+button:focus,
+button:active,
+input:focus,
+input:active,
+textarea:focus,
+textarea:active{
+    /* 클릭하면 테두리에 생성되는 구린 스타일 없애기 */
+    outline: none;
+    box-shadow: none;
+}
+
+ol,
+ul,
+li{
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+p{
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: #2b292d;
+}
+/* Reset CSS 끝 */
+
+/* >= 768px (Desktop) */
+@media screen and(min-width: 768px){
+    /* Reset CSS */
+    p{
+        font-size: 22px;
+        line-height: 1.3636363636;
+    }
+}
+
+/* Custom Grid System - Fix container width */
+/* 2. 그리드 시스템음 Bootstrap에서 제공하는 그리드 시스템을 기본적으로 적용하나,
+    maximun container 사이즈를 960px로 제한합니다
+    해결~ */
+@media screen and (min-width: 1200px){
+    /* 화면 사이즈가 최소 1200px 이상일 때 보여주기 */
+    .container{
+        /* 화면사이즈가 1200px 이상이어도 container의 크기는 최대로 960px 까지만 커지도록 해라 */
+        max-width: 960px;
+    }
+}
